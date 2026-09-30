@@ -3,21 +3,20 @@ from time import sleep
 
 
 def main() -> None:
-    now = datetime.now()
-    hours = now.strftime("%H")
-    minutes = now.strftime("%M")
-    seconds = now.strftime("%S")
+    while True:
 
-    file_name = f"app-{hours}_{minutes}_{seconds}.log"
+        now = datetime.now()
+        hours = now.strftime("%H")
+        minutes = now.strftime("%M")
+        seconds = now.strftime("%S")
 
-    text = f"{now.date()} {now.strftime('%H:%M:%S')}"
-    with open(file_name, "a") as f:
-        f.write(text)
+        file_name = f"app-{hours}_{minutes}_{seconds}.log"
+
+        text = f"{now.date()} {now.strftime('%H:%M:%S')}"
+        with open(file_name, "a") as f:
+            f.write(text)
+        sleep(1)
 
 
 if __name__ == "__main__":
     main()
-
-while True:
-    main()
-    sleep(1)
