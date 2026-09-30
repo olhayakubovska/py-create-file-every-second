@@ -2,7 +2,7 @@ from datetime import datetime  # DO NOT CHANGE THIS IMPORT
 from time import sleep
 
 
-def main():
+def main() -> None:
     now = datetime.now()
     hours = now.strftime("%H")
     minutes = now.strftime("%M")
@@ -10,7 +10,7 @@ def main():
 
     file_name = f"app-{hours}_{minutes}_{seconds}.log"
 
-    text = f"{now.date()} {now.strftime("%H:%M:%S")}"
+    text = f"{now.date()} {now.strftime('%H:%M:%S')}"
     with open(file_name, "a") as f:
         f.write(text)
 
